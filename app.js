@@ -1,4 +1,5 @@
 require("dotenv").config(); //loading environment variables
+const { getUmucyoAssignments } = require("./utils/crawler");
 const express = require("express");
 
 const app = express();
@@ -16,6 +17,8 @@ rabbitmqProcess.on("error", (err) => {
 process.on("exit", () => {
   rabbitmqProcess.kill();
 });
+
+getUmucyoAssignments();
 
 //home route
 app.get("/", (req, res) => {
