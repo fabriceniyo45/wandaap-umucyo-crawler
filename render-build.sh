@@ -21,4 +21,3 @@ fi
 
 # add your own build commands...
 npm install
-npm run start
